@@ -181,6 +181,11 @@ class MainActivity : AppCompatActivity() {
                                 first_time = false
                                 flag = true
                             }
+
+                            if(complete()){
+                                val intent_max = Intent(this@MainActivity, ScoreScreen::class.java)
+                                startActivity(intent_max)
+                            }
                         }
                         MotionEvent.ACTION_MOVE -> {
                             var x = motionEvent.getX()
@@ -214,9 +219,18 @@ class MainActivity : AppCompatActivity() {
                                     }
                                 }
                             }
+
+                            if(complete()){
+                                val intent_max = Intent(this@MainActivity, ScoreScreen::class.java)
+                                startActivity(intent_max)
+                            }
                         }
                         MotionEvent.ACTION_UP -> {
                             flag = false //初期化する
+                            if(complete()){
+                                val intent_max = Intent(this@MainActivity, ScoreScreen::class.java)
+                                startActivity(intent_max)
+                            }
                         }
                     }
                     return@OnTouchListener true
@@ -224,6 +238,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun complete(): Boolean{
+        var ans_bool: Boolean = true
+
+        for(i in 0..(row - 1)){
+            for(j in 0..(col - 1)){
+                if(mApper[i][j] == 0) ans_bool = false
+            }
+        }
+
+        return ans_bool
     }
 
     fun getButton(){

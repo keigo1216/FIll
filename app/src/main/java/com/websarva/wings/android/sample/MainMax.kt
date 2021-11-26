@@ -214,6 +214,7 @@ class MainMax : AppCompatActivity() {
                                     }
                                 }
                             }
+
                         }
                         MotionEvent.ACTION_UP -> {
                             flag = false //初期化する
@@ -224,6 +225,18 @@ class MainMax : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun complete(): Boolean{
+        var ans_bool: Boolean = true
+
+        for(i in 0..(row - 1)){
+            for(j in 0..(col - 1)){
+                if(mApper[i][j] == 0) ans_bool = false
+            }
+        }
+
+        return ans_bool
     }
 
     fun getButton(){

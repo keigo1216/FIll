@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sample">
         <activity
+            android:name=".ScoreScreen"
+            android:exported="false" />
+        <activity
             android:name=".MainMax"
             android:exported="false" />
         <activity
@@ -26,7 +29,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
