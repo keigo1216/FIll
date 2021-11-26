@@ -15,4 +15,9 @@ class Home : AppCompatActivity() {
         val intent = Intent(this@Home, MainActivity::class.java)
         startActivity(intent)
     }
+
+    fun max_bt(view: View){
+        val intent_max = Intent(this@Home, MainMax::class.java)
+        startActivity(intent_max)
+    }
 }
